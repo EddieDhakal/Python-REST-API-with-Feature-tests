@@ -46,3 +46,8 @@ Please Note: This is just a simple demonstration of a REST API rather than an is
  - `oktest` For testing units
  - `falcon` REST framework
  - `cython` For accelerating falcon (optional)
+
+#Dev Installation
+It is recommended to use a Python virtual environment like `pyenv` or the default `virtualenv`.
+
+`python setup.py develop`
