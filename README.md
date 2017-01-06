@@ -8,7 +8,7 @@ A simple demonstration of a REST API in Python with Feature tests.
 
 #Sample Requests and Responses
 
-**Create ticket request
+###Create ticket request
 
 ```
 {
@@ -17,7 +17,7 @@ A simple demonstration of a REST API in Python with Feature tests.
 }
 ```
 
-**Create ticket response
+###Create ticket response
 
 ```
 {
@@ -27,7 +27,7 @@ A simple demonstration of a REST API in Python with Feature tests.
 }
 ```
 
-**Query ticket status request
+###Query ticket status request
 
 ```
 {
@@ -35,7 +35,7 @@ A simple demonstration of a REST API in Python with Feature tests.
 }
 ```
 
-**Query ticket status response
+###Query ticket status response
 
 ```
 {
