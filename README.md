@@ -46,8 +46,18 @@ Please Note: This is just a simple demonstration of a REST API rather than an is
  - `oktest` For testing units
  - `falcon` REST framework
  - `cython` For accelerating falcon (optional)
+ - `sqlite3` For presistance
 
 #Dev Installation
 It is recommended to use a Python virtual environment like `pyenv` or the default `virtualenv`.
 
-`python setup.py develop`
+`$ python setup.py develop`
+
+
+##Creating database
+Please make sure `sqlite3` is installed.
+
+For example, if you are on Ubuntu `$ sudo apt-get install sqlite3` will do the job.
+
+Then create the database
+`$ cat ticket.sql | sqlite3 ticket.db`
