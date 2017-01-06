@@ -10,7 +10,7 @@ Please Note: This is just a simple demonstration of a REST API rather than an is
 ###Create ticket request
 ```
 {
-    "type": "Bug"
+    "type": "Bug",
     "message": "The links are broken."
 }
 ```
