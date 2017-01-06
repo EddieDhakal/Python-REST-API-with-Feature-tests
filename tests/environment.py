@@ -2,10 +2,15 @@ import threading
 from wsgiref import simple_server
 
 from handlers import app
+from config import session
+from repo import Repo
 
 
 def clear_database():
-    pass
+    with session() as db:
+        repo = Repo(db)
+        repo.clear_database()
+        db.commit()
 
 
 def before_all(context):
