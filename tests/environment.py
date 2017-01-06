@@ -23,3 +23,5 @@ def before_all(context):
 
 def after_all(context):
     clear_database()
+    context.server.shutdown()
+    context.thread.join()
