@@ -1,0 +1,10 @@
+syntax: glob
+docs/_build
+*.pyc
+*.egg
+*.egg-info
+*.db
+.idea/*
+*.pid
+*.sqlite
+__pycache__
