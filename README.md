@@ -1,15 +1,13 @@
 #Ticketing System Backend
 
 ##Intro
-
 A simple demonstration of a REST API in Python with Feature tests.
 
-*Please Note: This is a demonstration of a REST API rather than an issue tracking system.
+Please Note: This is just a simple demonstration of a REST API rather than an issue tracking system.
 
 #Sample Requests and Responses
 
 ###Create ticket request
-
 ```
 {
     "type": "Bug"
@@ -18,7 +16,6 @@ A simple demonstration of a REST API in Python with Feature tests.
 ```
 
 ###Create ticket response
-
 ```
 {
     "id": 123456,
@@ -28,7 +25,6 @@ A simple demonstration of a REST API in Python with Feature tests.
 ```
 
 ###Query ticket status request
-
 ```
 {
     "id": 123456
@@ -36,7 +32,6 @@ A simple demonstration of a REST API in Python with Feature tests.
 ```
 
 ###Query ticket status response
-
 ```
 {
     "id": 123456
@@ -44,3 +39,10 @@ A simple demonstration of a REST API in Python with Feature tests.
     "status": "closed"
 }
 ```
+
+#Dependencies
+ - `behave` For testing features
+ - `requests` For testing HTTP API calls
+ - `oktest` For testing units
+ - `falcon` REST framework
+ - `cython` For accelerating falcon (optional)
