@@ -10,7 +10,7 @@ Please Note: This is just a simple demonstration of a REST API rather than an is
 ###Create ticket request
 ```
 {
-    "type": "Bug",
+    "ticket_type": "Bug",
     "message": "The links are broken."
 }
 ```
@@ -19,7 +19,7 @@ Please Note: This is just a simple demonstration of a REST API rather than an is
 ```
 {
     "id": 123456,
-    "type": "Bug",
+    "ticket_type": "Bug",
     "status": "opened"
 }
 ```
@@ -35,7 +35,7 @@ Please Note: This is just a simple demonstration of a REST API rather than an is
 ```
 {
     "id": 123456
-    "type": "Bug",
+    "ticket_type": "Bug",
     "status": "closed"
 }
 ```
