@@ -60,6 +60,33 @@ class QueryTicketStatus:
                 sort_keys=True, indent=4
             )
 
+
+class ChangeTicketStatus:
+
+    @staticmethod
+    def on_put(req, resp, ticket_id):
+        payload = json.loads(req.stream.read().decode('utf-8'))
+        status_name = payload.get('status')
+
+        with session() as db:
+            repo = Repo(db)
+            ticket = repo.list_ticket(int(ticket_id))
+
+            repo.change_ticket_status(
+                ticket=ticket,
+                status=Ticket.STATUSES[status_name]
+            )
+
+        resp.body = json.dumps(
+            {
+                'id': ticket_id,
+                'status': status_name
+            },
+            sort_keys=True, indent=4
+        )
+
+
 app = falcon.API()
 app.add_route('/create-ticket', CreateTicket)
 app.add_route('/view-status/{ticket_id}', QueryTicketStatus)
+app.add_route('/change-ticket-status/{ticket_id}', ChangeTicketStatus)
