@@ -12,7 +12,7 @@ def _(context, issue):
 @when('created a ticket with "{issue_type}" as a ticket type')
 def _(context, issue_type):
     request_payload = {
-        "type": "Bug",
+        "ticket_type": "Bug",
         "message": "The links are broken."
     }
 
