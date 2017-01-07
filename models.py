@@ -23,7 +23,16 @@ class Ticket:
         return reversed_statuses.get(status_id)
 
     @classmethod
-    def create(cls, ticket_type, message):
+    def find_ticket_name(cls, ticket_type_id):
+        """
+        Finds the ticket name for a given ticket type ID.
+        """
+        ticket_types = cls.TICKETS_TYPES
+        reversed_ticket_types = dict(zip(ticket_types.values(), ticket_types.keys()))
+        return reversed_ticket_types.get(ticket_type_id)
+
+    @classmethod
+    def create_new(cls, ticket_type, message):
         """
         Creates a new ticket.
 
@@ -31,10 +40,8 @@ class Ticket:
         :param message: Text describing the ticket
         :return: A ticket object
         """
-        default_status_name = cls.find_status_name(cls.default_status)
         return cls(
             ticket_type=ticket_type,
-            status=default_status_name,
             message=message
         )
 
@@ -75,7 +82,9 @@ class Ticket:
 
     @status.setter
     def status(self, new_status):
-        if new_status not in Ticket.STATUSES:
+        new_status_name = Ticket.find_status_name(new_status)
+
+        if new_status_name not in Ticket.STATUSES:
             raise ValueError(new_status + ' is not a valid status.')
 
         if self.status == new_status:
