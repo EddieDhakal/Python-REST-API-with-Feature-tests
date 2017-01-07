@@ -24,9 +24,9 @@ class Repo:
 
     def list_ticket(self, ticket_id):
         cursor = self.db.execute("""
-            SELECT id, ticket_type, status, message
-            FROM tickets
-            WHERE id = ?
+            select id, ticket_type, status, message
+            from tickets
+            where id = ?
         """, (str(ticket_id),))
         tickets = cursor.fetchall()
 
@@ -38,3 +38,10 @@ class Repo:
                 status=ticket[2],
                 message=ticket[3]
             )
+
+    def change_ticket_status(self, ticket, status):
+        self.db.execute("""
+            update tickets
+            set status = ?
+            where id = ?
+        """, (status, ticket.ticket_id))
