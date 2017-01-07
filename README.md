@@ -53,6 +53,10 @@ It is recommended to use a Python virtual environment like `pyenv` or the defaul
 
 `$ python setup.py develop`
 
+Please note the feature tests and the application run on a separate process.
+In other even if the backend is completely written in a new language the feature
+files can still be reused so long as the API spits out the same JSON.
+
 
 ##Creating database
 Please make sure `sqlite3` is installed.
